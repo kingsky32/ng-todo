@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Todo } from '../todo';
 
 @Component({
   selector: 'app-list',
@@ -7,7 +6,9 @@ import { Todo } from '../todo';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  constructor() {}
+  @Input() text: String;
+  constructor() {
+    this.text = '';
+  }
   ngOnInit(): void {}
-  item: Todo;
 }
