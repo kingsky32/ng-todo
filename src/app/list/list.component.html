@@ -1,1 +1,7 @@
-<li>{{ text }}</li>
+<ul>
+  <li *ngFor="let item of todos">
+    <span>{{ item.Text }}</span>
+    <button type="button"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+    <button type="button"><fa-icon [icon]="faTimes"></fa-icon></button>
+  </li>
+</ul>

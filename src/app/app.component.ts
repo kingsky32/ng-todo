@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Todo } from './todo';
 
 @Component({
@@ -10,12 +11,18 @@ export class AppComponent {
   title = 'ng-todo';
   todos: Todo[] = [];
   text: string = '';
+  faPlus = faPlus;
 
   onSubmit() {
     event?.preventDefault();
-    this.todos.push({
-      Text: this.text,
-    });
+    if (this.text !== '') {
+      this.todos.push({
+        Text: this.text,
+      });
+      this.text = '';
+    } else {
+      alert('Please check your Todo');
+    }
   }
   setText(event: Event) {
     this.text = (<HTMLInputElement>event.target).value;

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'app-list',
@@ -6,9 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  @Input() text: String;
+  @Input() todos: Todo[];
+  faTimes = faTimes;
+  faPencilAlt = faPencilAlt;
   constructor() {
-    this.text = '';
+    this.todos = [];
   }
   ngOnInit(): void {}
 }

@@ -1,12 +1,14 @@
-<form (submit)="onSubmit()">
-  <input
-    type="text"
-    (input)="setText($event)"
-    placeholder="Type Todos"
-    autofocus
-  />
-  <button type="submit">Add</button>
-</form>
-<ul>
-  <app-list *ngFor="let item of todos" [text]="item.Text"></app-list>
-</ul>
+<div class="wrapper">
+  <h1>Todo List</h1>
+  <form (submit)="onSubmit()">
+    <input
+      type="text"
+      (input)="setText($event)"
+      placeholder="Type Todos"
+      autofocus
+      [value]="text"
+    />
+    <button type="submit"><fa-icon [icon]="faPlus"></fa-icon></button>
+  </form>
+  <app-list [todos]="todos"></app-list>
+</div>

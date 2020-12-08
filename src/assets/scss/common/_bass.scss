@@ -1,0 +1,16 @@
+@import "~normalize.css";
+
+body,
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.05rem;
+  background-color: var(--dark);
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
