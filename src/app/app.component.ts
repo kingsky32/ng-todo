@@ -10,13 +10,13 @@ import { Todo } from './todo';
 export class AppComponent {
   title = 'ng-todo';
   todos: Todo[] = [];
-  text: string = '';
+  text: String = '';
   faPlus = faPlus;
 
   onSubmit() {
     event?.preventDefault();
     if (this.text !== '') {
-      this.todos.push({
+      this.todos.unshift({
         Text: this.text,
       });
       this.text = '';
